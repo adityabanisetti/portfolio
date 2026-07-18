@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="100%" height="100%">
+  <rect width="960" height="680" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="rainbowBar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e63946"/>
+      <stop offset="25%" stop-color="#f4a261"/>
+      <stop offset="50%" stop-color="#2a9d8f"/>
+      <stop offset="75%" stop-color="#457b9d"/>
+      <stop offset="100%" stop-color="#1d3557"/>
+    </linearGradient>
+  </defs>
+  <rect x="930" y="0" width="30" height="680" fill="url(#rainbowBar2)"/>
+  <g fill="white" opacity="0.6">
+    <polygon points="930,30 945,40 930,50"/>
+    <polygon points="930,70 945,80 930,90"/>
+    <polygon points="930,110 945,120 930,130"/>
+    <polygon points="930,150 945,160 930,170"/>
+    <polygon points="930,190 945,200 930,210"/>
+    <polygon points="930,230 945,240 930,250"/>
+    <polygon points="930,270 945,280 930,290"/>
+    <polygon points="930,310 945,320 930,330"/>
+    <polygon points="930,350 945,360 930,370"/>
+    <polygon points="930,390 945,400 930,410"/>
+    <polygon points="930,430 945,440 930,450"/>
+    <polygon points="930,470 945,480 930,490"/>
+    <polygon points="930,510 945,520 930,530"/>
+    <polygon points="930,550 945,560 930,570"/>
+    <polygon points="930,590 945,600 930,610"/>
+    <polygon points="930,630 945,640 930,650"/>
+  </g>
+  <g opacity="0.06" stroke="#888" fill="none" stroke-width="0.8">
+    <polygon points="750,30 790,50 750,70 710,50"/><polygon points="790,50 790,90 750,70"/>
+    <polygon points="820,20 860,40 820,60 780,40"/><polygon points="860,40 860,80 820,60"/>
+    <polygon points="870,80 910,100 870,120 830,100"/>
+    <polygon points="580,520 620,540 580,560 540,540"/><polygon points="620,540 620,580 580,560"/>
+    <polygon points="650,550 690,570 650,590 610,570"/><polygon points="690,570 690,610 650,590"/>
+    <polygon points="780,560 820,580 780,600 740,580"/><polygon points="820,580 820,620 780,600"/>
+    <polygon points="840,520 880,540 840,560 800,540"/><polygon points="880,540 880,580 840,560"/>
+  </g>
+
+  <!-- Cadence logo -->
+  <text x="480" y="72" text-anchor="middle" font-family="'Segoe UI', -apple-system, sans-serif" font-size="38" font-weight="300" letter-spacing="2" fill="#1a1a1a">c<tspan>ā</tspan>dence<tspan font-size="20" baseline-shift="super">®</tspan></text>
+  <line x1="350" y1="85" x2="610" y2="85" stroke="#e0e0e0" stroke-width="0.8"/>
+
+  <!-- Snowflake rosette -->
+  <g transform="translate(180, 320)">
+    <polygon points="0,-60 10,-40 -10,-40" fill="#e63946" opacity="0.9"/>
+    <polygon points="20,-52 28,-32 8,-38" fill="#f4a261" opacity="0.9"/>
+    <polygon points="35,-35 40,-14 22,-24" fill="#2a9d8f" opacity="0.9"/>
+    <polygon points="40,-10 42,12 24,2" fill="#457b9d" opacity="0.9"/>
+    <polygon points="-20,-52 -8,-38 -28,-32" fill="#e63946" opacity="0.8"/>
+    <polygon points="-35,-35 -22,-24 -40,-14" fill="#f4a261" opacity="0.8"/>
+    <polygon points="-40,-10 -24,2 -42,12" fill="#2a9d8f" opacity="0.8"/>
+    <polygon points="35,35 22,24 40,14" fill="#e63946" opacity="0.7"/>
+    <polygon points="20,52 8,38 28,32" fill="#f4a261" opacity="0.7"/>
+    <polygon points="0,60 -10,40 10,40" fill="#2a9d8f" opacity="0.7"/>
+    <polygon points="-20,52 -28,32 -8,38" fill="#457b9d" opacity="0.7"/>
+    <polygon points="-35,35 -40,14 -22,24" fill="#e63946" opacity="0.7"/>
+    <polygon points="0,-35 8,-20 -8,-20" fill="#f4a261" opacity="0.8"/>
+    <polygon points="20,-28 24,-12 8,-18" fill="#2a9d8f" opacity="0.8"/>
+    <polygon points="28,-8 28,8 14,0" fill="#457b9d" opacity="0.8"/>
+    <polygon points="20,28 8,18 24,12" fill="#e63946" opacity="0.7"/>
+    <polygon points="0,35 -8,20 8,20" fill="#f4a261" opacity="0.7"/>
+    <polygon points="-20,28 -24,12 -8,18" fill="#2a9d8f" opacity="0.7"/>
+    <polygon points="-28,-8 -14,0 -28,8" fill="#457b9d" opacity="0.7"/>
+    <polygon points="-20,-28 -8,-18 -24,-12" fill="#e63946" opacity="0.8"/>
+    <polygon points="0,-14 12,7 -12,7" fill="#e63946" opacity="0.6"/>
+    <polygon points="0,14 -12,-7 12,-7" fill="#2a9d8f" opacity="0.6"/>
+  </g>
+
+  <text x="520" y="270" text-anchor="middle" font-family="'Georgia', 'Times New Roman', serif" font-size="72" font-style="italic" fill="#222222">Certificate</text>
+  <text x="520" y="340" text-anchor="middle" font-family="'Segoe UI', -apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="#1a1a1a">ADITYA BANISETTI</text>
+  <text x="520" y="395" text-anchor="middle" font-family="'Segoe UI', -apple-system, sans-serif" font-size="18" fill="#333333">has successfully completed the Cadence Training Course</text>
+  <text x="520" y="440" text-anchor="middle" font-family="'Georgia', 'Times New Roman', serif" font-size="22" font-weight="bold" fill="#1a1a1a">Verilog Language and Application v28.0 (Online)</text>
+
+  <text x="50" y="600" font-family="'Segoe UI', -apple-system, sans-serif" font-size="14" fill="#333333">Completion Date: 4/6/2026</text>
+
+  <line x1="340" y1="630" x2="620" y2="630" stroke="#cccccc" stroke-width="1"/>
+  <text x="480" y="648" text-anchor="middle" font-family="'Segoe UI', -apple-system, sans-serif" font-size="13" fill="#555555">Cadence Training Services</text>
+  <text x="480" y="666" text-anchor="middle" font-family="'Segoe UI', -apple-system, sans-serif" font-size="13" fill="#1a6fc4" text-decoration="underline">http://cadence.com/training</text>
+</svg>
