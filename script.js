@@ -95,14 +95,14 @@ class TracePulse {
     constructor() {
         this.reset();
     }
-    
+
     reset() {
         // Start at a random grid crossing point
         this.gridSize = 40;
         this.x = Math.floor(Math.random() * (width / this.gridSize)) * this.gridSize;
         this.y = Math.floor(Math.random() * (height / this.gridSize)) * this.gridSize;
         this.speed = Math.random() > 0.5 ? 2 : 4;
-        
+
         // Choose initial direction (0=Up, 1=Right, 2=Down, 3=Left)
         this.dir = Math.floor(Math.random() * 4);
         this.length = Math.floor(Math.random() * 15) + 5;
@@ -110,23 +110,23 @@ class TracePulse {
         this.pulseColor = Math.random() > 0.4 ? '#00f3ff' : '#00ffd1';
         this.pulseWidth = Math.random() * 1.5 + 1;
     }
-    
+
     update() {
         // Move cardinally
-        switch(this.dir) {
+        switch (this.dir) {
             case 0: this.y -= this.speed; break; // Up
             case 1: this.x += this.speed; break; // Right
             case 2: this.y += this.speed; break; // Down
             case 3: this.x -= this.speed; break; // Left
         }
-        
+
         this.steps++;
-        
+
         // Decide whether to change direction or reset
         if (this.steps >= this.length) {
             if (Math.random() > 0.7) {
                 // Change direction cardinally (90 degrees turn)
-                const turns = [ (this.dir + 1) % 4, (this.dir + 3) % 4 ];
+                const turns = [(this.dir + 1) % 4, (this.dir + 3) % 4];
                 this.dir = turns[Math.floor(Math.random() * 2)];
                 this.steps = 0;
                 this.length = Math.floor(Math.random() * 10) + 3;
@@ -134,20 +134,20 @@ class TracePulse {
                 this.reset();
             }
         }
-        
+
         // Boundaries check
         if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
             this.reset();
         }
     }
-    
+
     draw() {
         ctx.beginPath();
         ctx.strokeStyle = this.pulseColor;
         ctx.lineWidth = this.pulseWidth;
         ctx.shadowBlur = 8;
         ctx.shadowColor = this.pulseColor;
-        
+
         // Draw path line
         if (this.dir === 0) {
             ctx.moveTo(this.x, this.y + (this.speed * 2));
@@ -162,7 +162,7 @@ class TracePulse {
             ctx.moveTo(this.x + (this.speed * 2), this.y);
             ctx.lineTo(this.x, this.y);
         }
-        
+
         ctx.stroke();
         ctx.shadowBlur = 0; // Reset shadow for efficiency
     }
@@ -184,7 +184,7 @@ const pulses = Array.from({ length: 25 }, () => new TracePulse());
 
 function animate() {
     ctx.clearRect(0, 0, width, height);
-    
+
     // Draw static silicon node pads
     ctx.fillStyle = 'rgba(0, 243, 255, 0.25)';
     staticNodes.forEach(node => {
@@ -193,7 +193,7 @@ function animate() {
         const scale = 1 + Math.sin(Date.now() * 0.002 + node.pulseOffset) * 0.3;
         ctx.arc(node.x, node.y, node.size * scale, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Outer concentric ring
         ctx.strokeStyle = 'rgba(0, 243, 255, 0.05)';
         ctx.lineWidth = 0.5;
@@ -207,7 +207,7 @@ function animate() {
         pulse.update();
         pulse.draw();
     });
-    
+
     requestAnimationFrame(animate);
 }
 
@@ -285,39 +285,39 @@ function updateLogicSimulator() {
     const valA = parseInt(toggleA.getAttribute('data-value'));
     const valB = parseInt(toggleB.getAttribute('data-value'));
     const gate = gateType.value;
-    
+
     let result = 0;
-    
+
     // Evaluate logic
-    switch(gate) {
+    switch (gate) {
         case 'AND': result = valA & valB; break;
-        case 'OR':  result = valA | valB; break;
+        case 'OR': result = valA | valB; break;
         case 'XOR': result = valA ^ valB; break;
         case 'NAND': result = (valA & valB) === 1 ? 0 : 1; break;
-        case 'NOR':  result = (valA | valB) === 1 ? 0 : 1; break;
+        case 'NOR': result = (valA | valB) === 1 ? 0 : 1; break;
     }
-    
+
     // Update displays
     outputY.textContent = result;
     gateText.textContent = gate;
-    
+
     // Update SVG and Verilog code blocks
     svgGate.innerHTML = gateSVGs[gate];
     verilogCode.textContent = verilogModules[gate];
-    
+
     // Signal wire glow updates
     if (valA === 1) {
         sigA.classList.add('active-sec');
     } else {
         sigA.classList.remove('active-sec');
     }
-    
+
     if (valB === 1) {
         sigB.classList.add('active-sec');
     } else {
         sigB.classList.remove('active-sec');
     }
-    
+
     if (result === 1) {
         outputY.classList.add('active');
         sigOut.classList.add('active');
@@ -390,10 +390,10 @@ const closeModal = () => {
 // --- Clickable certificate thumbnails (achievement section) ---
 document.querySelectorAll('.certificate-thumbnail-container[data-cert-src]').forEach(thumb => {
     thumb.addEventListener('click', () => {
-        const src      = thumb.dataset.certSrc;
-        const title    = thumb.dataset.certTitle;
+        const src = thumb.dataset.certSrc;
+        const title = thumb.dataset.certTitle;
         const download = thumb.dataset.certDownload;
-        const verify   = thumb.dataset.certVerify || null;
+        const verify = thumb.dataset.certVerify || null;
         openCertModal(src, title, download, verify);
     });
 });
@@ -401,12 +401,12 @@ document.querySelectorAll('.certificate-thumbnail-container[data-cert-src]').for
 // --- "View" buttons inside cert-item cards ---
 document.querySelectorAll('.view-cert-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        const card    = btn.closest('.cert-item[data-cert-src]');
+        const card = btn.closest('.cert-item[data-cert-src]');
         if (!card) return;
-        const src      = card.dataset.certSrc;
-        const title    = card.dataset.certTitle;
+        const src = card.dataset.certSrc;
+        const title = card.dataset.certTitle;
         const download = card.dataset.certDownload;
-        const verify   = card.dataset.certVerify || null;
+        const verify = card.dataset.certVerify || null;
         openCertModal(src, title, download, verify);
     });
 });
@@ -431,24 +431,24 @@ const toast = document.getElementById('toast-message');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Perform simple form inputs check
         const nameVal = document.getElementById('name').value.trim();
         const emailVal = document.getElementById('email').value.trim();
         const msgVal = document.getElementById('message').value.trim();
-        
+
         if (nameVal && emailVal && msgVal) {
             // Success animation
             toast.classList.add('show');
-            
+
             // Clear inputs
             contactForm.reset();
-            
+
             // Remove floating active classes from labels by triggering change
             document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
                 input.value = '';
             });
-            
+
             // Dismiss toast after duration
             setTimeout(() => {
                 toast.classList.remove('show');
