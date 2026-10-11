@@ -36,10 +36,26 @@
                 <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-right-controls">
+                <!-- Theme Toggle Switch -->
+                <div class="theme-toggle-wrapper" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle light/dark theme">
+                    <span class="theme-icon theme-icon-dark">
+                        <!-- Moon SVG -->
+                        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+                    </span>
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb"></div>
+                    </div>
+                    <span class="theme-icon theme-icon-light">
+                        <!-- Sun SVG -->
+                        <svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    </span>
+                </div>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </header>
@@ -264,7 +280,6 @@
                             <span class="skill-tag">C</span>
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Data Structures using C</span>
                         </div>
                     </div>
 
@@ -300,78 +315,6 @@
                     </div>
                 </div>
 
-                <!-- Logic Gate Playground (WOW Factor) -->
-                <div class="playground-container">
-                    <div class="playground-card">
-                        <div class="playground-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                            <span class="playground-title">Logic Gate Sandbox v1.0</span>
-                        </div>
-                        <div class="playground-body">
-                            <p class="playground-desc">Interact with the digital logic simulator below. Toggle inputs
-                                <strong>A</strong> and <strong>B</strong> to verify the gate outputs.
-                            </p>
-
-                            <div class="logic-simulator">
-                                <div class="logic-inputs">
-                                    <div class="input-toggle-wrapper">
-                                        <label class="toggle-label">Input A</label>
-                                        <button class="toggle-btn" id="toggle-a" data-value="0">0</button>
-                                    </div>
-                                    <div class="input-toggle-wrapper">
-                                        <label class="toggle-label">Input B</label>
-                                        <button class="toggle-btn" id="toggle-b" data-value="0">0</button>
-                                    </div>
-                                </div>
-
-                                <div class="logic-gate-selector">
-                                    <label for="gate-type">Select Gate</label>
-                                    <select id="gate-type" class="gate-select">
-                                        <option value="AND">AND</option>
-                                        <option value="OR">OR</option>
-                                        <option value="XOR">XOR</option>
-                                        <option value="NAND">NAND</option>
-                                        <option value="NOR">NOR</option>
-                                    </select>
-                                </div>
-
-                                <div class="logic-visual">
-                                    <div class="signal-line line-a" id="sig-a"></div>
-                                    <div class="signal-line line-b" id="sig-b"></div>
-
-                                    <div class="gate-schematic" id="gate-schematic">
-                                        <span class="gate-text" id="gate-text">AND</span>
-                                        <div class="gate-icon-wrapper">
-                                            <!-- SVG Gate representations will be injected dynamically -->
-                                            <svg class="gate-svg" viewBox="0 0 100 60" id="svg-gate">
-                                                <!-- Dynamic path here -->
-                                            </svg>
-                                        </div>
-                                    </div>
-
-                                    <div class="signal-line line-out" id="sig-out"></div>
-                                </div>
-
-                                <div class="logic-outputs">
-                                    <div class="output-display-wrapper">
-                                        <label class="output-label">Output Y</label>
-                                        <div class="output-display" id="output-y">0</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="verilog-code-display">
-                                <div class="verilog-header">
-                                    <span>verilog_module.v</span>
-                                    <span class="lang-tag">Verilog</span>
-                                </div>
-                                <pre><code id="verilog-code">assign Y = A & B;</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -589,164 +532,6 @@
                             </div>
                         </div>
 
-                        <!-- Anthropic Claude API -->
-                        <div class="cert-item" data-cert-src="assets/claude_.png"
-                            data-cert-title="Claude with the Anthropic API"
-                            data-cert-download="assets/claude_.png"
-                            data-cert-verify="https://verify.skilljar.com/c/4zahtr95ssiv">
-                            <div class="cert-badge">
-                                <svg class="icon-svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm3 13.916v6.084l-3-2-3 2v-6.084c.947.054 1.95.084 3 .084s2.053-.03 3-.084zm-6 2.084l1-3.125-2-.875v4zm6 0v-4l-2 .875 1 3.125z" />
-                                </svg>
-                            </div>
-                            <div class="cert-details">
-                                <h3 class="cert-name">Claude with the Anthropic API</h3>
-                                <div class="cert-meta">
-                                    <span class="cert-issuer">Anthropic</span>
-                                    <span class="cert-date">May 2026</span>
-                                </div>
-                                <div class="cert-actions">
-                                    <button class="btn-cert-action view-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.047c-3.667 8.3-12 8.3-24 0 3.667-8.3 12-8.3 24 0zm-12-5.953c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6z" />
-                                        </svg> View
-                                    </button>
-                                    <a href="assets/cluade_.png"
-                                        download="Claude_with_Anthropic_API_Certificate.png"
-                                        class="btn-cert-action download-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm-10 11v2h12v-2h-12z" />
-                                        </svg> Download
-                                    </a>
-                                    <a href="https://verify.skilljar.com/c/4zahtr95ssiv" target="_blank"
-                                        class="btn-cert-action verify-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16.687l-4.148-3.791 1.288-1.408 2.86 2.614 7.649-6.98 1.291 1.405-8.94 8.16z" />
-                                        </svg> Verify
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Anthropic MCP -->
-                        <div class="cert-item" data-cert-src="assets/mcp.jpg"
-                            data-cert-title="Introduction to Model Context Protocol"
-                            data-cert-download="assets/mcp.jpg"
-                            data-cert-verify="https://verify.skilljar.com/c/3w2sj67tusmf">
-                            <div class="cert-badge">
-                                <svg class="icon-svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm3 13.916v6.084l-3-2-3 2v-6.084c.947.054 1.95.084 3 .084s2.053-.03 3-.084zm-6 2.084l1-3.125-2-.875v4zm6 0v-4l-2 .875 1 3.125z" />
-                                </svg>
-                            </div>
-                            <div class="cert-details">
-                                <h3 class="cert-name">Introduction to Model Context Protocol</h3>
-                                <div class="cert-meta">
-                                    <span class="cert-issuer">Anthropic</span>
-                                    <span class="cert-date">May 2026</span>
-                                </div>
-                                <div class="cert-actions">
-                                    <button class="btn-cert-action view-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.047c-3.667 8.3-12 8.3-24 0 3.667-8.3 12-8.3 24 0zm-12-5.953c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6z" />
-                                        </svg> View
-                                    </button>
-                                    <a href="assets/mcp.jpg"
-                                        download="Introduction_to_Model_Context_Protocol_Certificate.jpg"
-                                        class="btn-cert-action download-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm-10 11v2h12v-2h-12z" />
-                                        </svg> Download
-                                    </a>
-                                    <a href="https://verify.skilljar.com/c/3w2sj67tusmf" target="_blank"
-                                        class="btn-cert-action verify-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16.687l-4.148-3.791 1.288-1.408 2.86 2.614 7.649-6.98 1.291 1.405-8.94 8.16z" />
-                                        </svg> Verify
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Anthropic Agent Skills -->
-                        <div class="cert-item" data-cert-src="assets/agent.jpg"
-                            data-cert-title="Introduction to agent skills"
-                            data-cert-download="assets/agent.jpg">
-                            <div class="cert-badge">
-                                <svg class="icon-svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm3 13.916v6.084l-3-2-3 2v-6.084c.947.054 1.95.084 3 .084s2.053-.03 3-.084zm-6 2.084l1-3.125-2-.875v4zm6 0v-4l-2 .875 1 3.125z" />
-                                </svg>
-                            </div>
-                            <div class="cert-details">
-                                <h3 class="cert-name">Introduction to agent skills</h3>
-                                <div class="cert-meta">
-                                    <span class="cert-issuer">Anthropic</span>
-                                    <span class="cert-date">May 2026</span>
-                                </div>
-                                <div class="cert-actions">
-                                    <button class="btn-cert-action view-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.047c-3.667 8.3-12 8.3-24 0 3.667-8.3 12-8.3 24 0zm-12-5.953c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6z" />
-                                        </svg> View
-                                    </button>
-                                    <a href="assets/agent.jpg"
-                                        download="Introduction_to_agent_skills_Certificate.jpg"
-                                        class="btn-cert-action download-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm-10 11v2h12v-2h-12z" />
-                                        </svg> Download
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Anthropic Claude Code -->
-                        <div class="cert-item" data-cert-src="assets/claude.jpg"
-                            data-cert-title="Claude Code in Action" data-cert-download="assets/claude.jpg"
-                            data-cert-verify="https://verify.skilljar.com/c/mr5uarry9pth">
-                            <div class="cert-badge">
-                                <svg class="icon-svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm3 13.916v6.084l-3-2-3 2v-6.084c.947.054 1.95.084 3 .084s2.053-.03 3-.084zm-6 2.084l1-3.125-2-.875v4zm6 0v-4l-2 .875 1 3.125z" />
-                                </svg>
-                            </div>
-                            <div class="cert-details">
-                                <h3 class="cert-name">Claude Code in Action</h3>
-                                <div class="cert-meta">
-                                    <span class="cert-issuer">Anthropic</span>
-                                    <span class="cert-date">May 2026</span>
-                                </div>
-                                <div class="cert-actions">
-                                    <button class="btn-cert-action view-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.047c-3.667 8.3-12 8.3-24 0 3.667-8.3 12-8.3 24 0zm-12-5.953c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6z" />
-                                        </svg> View
-                                    </button>
-                                    <a href="assets/claude.jpg"
-                                        download="Claude_Code_in_Action_Certificate.jpg"
-                                        class="btn-cert-action download-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm-10 11v2h12v-2h-12z" />
-                                        </svg> Download
-                                    </a>
-                                    <a href="https://verify.skilljar.com/c/mr5uarry9pth" target="_blank"
-                                        class="btn-cert-action verify-cert-btn">
-                                        <svg class="icon-svg" viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16.687l-4.148-3.791 1.288-1.408 2.86 2.614 7.649-6.98 1.291 1.405-8.94 8.16z" />
-                                        </svg> Verify
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Cadence 1 -->
                         <div class="cert-item" data-cert-src="assets/cadence_digital_ic_cert.svg"

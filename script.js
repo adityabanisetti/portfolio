@@ -1,4 +1,27 @@
 /* ==========================================================================
+   DARK / LIGHT THEME TOGGLE
+   ========================================================================== */
+const themeToggle = document.getElementById('theme-toggle');
+const htmlEl = document.documentElement;
+
+// Restore saved preference
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme === 'light') {
+    htmlEl.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    if (isLight) {
+        htmlEl.removeAttribute('data-theme');
+        localStorage.setItem('portfolio-theme', 'dark');
+    } else {
+        htmlEl.setAttribute('data-theme', 'light');
+        localStorage.setItem('portfolio-theme', 'light');
+    }
+});
+
+/* ==========================================================================
    MOBILE MENU NAVIGATION
    ========================================================================== */
 const hamburger = document.getElementById('hamburger-menu');
